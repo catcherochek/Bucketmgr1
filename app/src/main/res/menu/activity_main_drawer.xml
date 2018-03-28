@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_input_data"
+        android:title="данные">
+            <menu>
+                <group
+                    android:checkableBehavior="single"
+                    android:menuCategory="container">
+
+                    <item
+                        android:id="@+id/nav_costumers"
+
+                        android:icon="@drawable/ic_costumers"
+                        android:title="@string/btn_costumers" />
+                    <item
+                        android:id="@+id/nav_goods"
+                        android:icon="@drawable/ic_menu_gallery"
+                        android:title="@string/btnGoods" />
+                    <item
+                        android:id="@+id/nav_debitors"
+                        android:icon="@drawable/ic_menu_slideshow"
+                        android:title="Должники" />
+
+                </group>
+            </menu>
+    </item>
+    <item
+        android:id="@+id/nav_journals"
+        android:title="журналы">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                android:menuCategory="container">
+
+
+                <item
+                    android:id="@+id/nav_journal_goods"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="журнал товаров" />
+                <item
+                    android:id="@+id/nav_rep_debitors"
+                    android:icon="@drawable/ic_costumers"
+                    android:title="Должники" />
+
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/reports"
+        android:title="отчеты"
+        app:showAsAction="collapseActionView">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                android:menuCategory="container">
+
+                <item
+                    android:id="@+id/nav_report_goods"
+
+                    android:icon="@drawable/ic_costumers"
+                    android:title="@string/btn_costumers" />
+                <item
+                    android:id="@+id/nav_report_debts"
+
+                    android:icon="@drawable/ic_costumers"
+                    android:title="Должники" />
+            </group>
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav_reports_print"
+        android:title="журналы">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                android:menuCategory="container">
+                <item
+                    android:id="@+id/nav_print_report_goods"
+
+                    android:icon="@drawable/ic_costumers"
+                    android:title="отчет на печать:товары" />
+            </group>
+        </menu>
+    </item>
+
+
+
+</menu>
