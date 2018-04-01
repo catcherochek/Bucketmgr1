@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
         android:paddingTop="50px"
-        android:text="Имя"
+        android:text="ХуИмя"
         android:textAlignment="center" />
 
     <EditText
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ok" />
+            android:text="хOkей" />
 
         <Button
             android:id="@+id/dialog_insert_costumer_btn_CANCEL"
