@@ -143,18 +143,18 @@ public class DBConstants {
             "INSERT INTO \"transaction\" (id, goods_id, supplier_id, count, date) VALUES (4, 1, 1, 100, '2017-09-03 11:37')"};
 
     public static final String[] QUERIES_FILL_SUPPLIERS = {"INSERT INTO suppliers (name) VALUES ('Тритон')",
-            "INSERT INTO suppliers (name) VALUES ('Корея')",
-            "INSERT INTO suppliers (name) VALUES ('Айсберг')",
-            "INSERT INTO suppliers (name) VALUES ('Гольфстрим')",
-            "INSERT INTO suppliers (name) VALUES ('Наша Ряба')",
-            "INSERT INTO suppliers (name) VALUES ('Юля мясо')"};
+            "INSERT INTO suppliers (name) VALUES ('Фирма1')",
+            "INSERT INTO suppliers (name) VALUES ('Фирма2')",
+            "INSERT INTO suppliers (name) VALUES ('Фирма3')",
+            "INSERT INTO suppliers (name) VALUES ('Фирма4')",
+            "INSERT INTO suppliers (name) VALUES ('Фирма5')"};
     public static final String[] QUERIES_FILL_GOODS = {"INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л', '5л', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л', '10л', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Тритон)', '10л-трит', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Корея)', '5л-корея', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Айсберг)', '5л-айсб', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(Тритон)', '10л-трит', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(Айсберг)', '10л-айсб', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Т)', '10л-трит', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(К)', '5л-корея', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(А)', '5л-айсб', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(Т)', '10л-трит', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(А)', '10л-айсб', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ящик  большой куриный', 'ящ.б.к.', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ящик маленький куриный', 'ящ.м.к.', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ящик колбасный', 'ящ.колб.', NULL)",
