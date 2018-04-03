@@ -150,7 +150,7 @@ public class DBConstants {
             "INSERT INTO suppliers (name) VALUES ('Фирма5')"};
     public static final String[] QUERIES_FILL_GOODS = {"INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л', '5л', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л', '10л', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Т)', '10л-трит', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Т)', '5л-трит', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(К)', '5л-корея', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(А)', '5л-айсб', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(Т)', '10л-трит', NULL)",
