@@ -142,7 +142,7 @@ public class DBConstants {
             "INSERT INTO \"transaction\" (id, goods_id, supplier_id, count, date) VALUES (3, 2, 1, 20, '2017-09-03 11:37')",
             "INSERT INTO \"transaction\" (id, goods_id, supplier_id, count, date) VALUES (4, 1, 1, 100, '2017-09-03 11:37')"};
 
-    public static final String[] QUERIES_FILL_SUPPLIERS = {"INSERT INTO suppliers (name) VALUES ('Тритон')",
+    public static final String[] QUERIES_FILL_SUPPLIERS = {"INSERT INTO suppliers (name) VALUES ('Фирма0')",
             "INSERT INTO suppliers (name) VALUES ('Фирма1')",
             "INSERT INTO suppliers (name) VALUES ('Фирма2')",
             "INSERT INTO suppliers (name) VALUES ('Фирма3')",
