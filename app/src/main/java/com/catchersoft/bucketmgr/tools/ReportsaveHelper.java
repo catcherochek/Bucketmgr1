@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 
-import com.catchersoft.bucketmgr.MainActivity;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * Created by Клим on 17.09.2017.
@@ -52,7 +51,7 @@ public class ReportsaveHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        DBhelper dbh = new DBhelper(context);
+        DBhelper dbh = DBhelper.getInstance(context);
         SQLiteDatabase db = dbh.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from select_total_report",new String[]{});
         cursor.moveToFirst();
