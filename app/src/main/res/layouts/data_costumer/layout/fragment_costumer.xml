@@ -31,22 +31,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
-        android:scrollIndicators="right">
+        android:fillViewport="true"
+        android:scrollIndicators="right"
+        android:id="@+id/scrollView2">
 
         <LinearLayout
             android:id="@+id/costumer_dataview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView2"
+            android:layout_height="wrap_content"
             android:isScrollContainer="true"
             android:orientation="vertical"
             android:weightSum="1">
 
 
         </LinearLayout>
+
+
     </ScrollView>
+
+
 
 
 </RelativeLayout>

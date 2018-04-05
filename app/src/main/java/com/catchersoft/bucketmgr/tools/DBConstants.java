@@ -142,7 +142,7 @@ public class DBConstants {
             "INSERT INTO \"transaction\" (id, goods_id, supplier_id, count, date) VALUES (3, 2, 1, 20, '2017-09-03 11:37')",
             "INSERT INTO \"transaction\" (id, goods_id, supplier_id, count, date) VALUES (4, 1, 1, 100, '2017-09-03 11:37')"};
 
-    public static final String[] QUERIES_FILL_SUPPLIERS = {"INSERT INTO suppliers (name) VALUES ('Тритон')",
+    public static final String[] QUERIES_FILL_SUPPLIERS = {"INSERT INTO suppliers (name) VALUES ('Фирма0')",
             "INSERT INTO suppliers (name) VALUES ('Фирма1')",
             "INSERT INTO suppliers (name) VALUES ('Фирма2')",
             "INSERT INTO suppliers (name) VALUES ('Фирма3')",
@@ -150,7 +150,7 @@ public class DBConstants {
             "INSERT INTO suppliers (name) VALUES ('Фирма5')"};
     public static final String[] QUERIES_FILL_GOODS = {"INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л', '5л', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л', '10л', NULL)",
-            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Т)', '10л-трит', NULL)",
+            "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(Т)', '5л-трит', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(К)', '5л-корея', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 5л(А)', '5л-айсб', NULL)",
             "INSERT INTO goods (name, artname, img) VALUES ('Ведро 10л(Т)', '10л-трит', NULL)",
