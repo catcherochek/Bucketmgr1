@@ -16,8 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBConstants;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBConstants;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,7 +47,7 @@ public class goods extends Fragment implements View.OnClickListener {
         Button button = (Button)view.findViewById(R.id.goods_btn1);
 
         button.setOnClickListener(this);
-        DBhelper dbh = new DBhelper(this.getContext());
+        DBhelper dbh = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from goods",new String[]{});
         cursor.moveToFirst();
@@ -134,7 +134,7 @@ public class goods extends Fragment implements View.OnClickListener {
                     String name = ((TextView) dialog.findViewById(R.id.dialog_goods_insert_name)).getText().toString();
                     String artname = ((TextView) dialog.findViewById(R.id.dialog_goods_insert_articul)).getText().toString();
                     if (!name.equals("")) {
-                        DBhelper dbh = new DBhelper(v.getContext());
+                        DBhelper dbh = DBhelper.getInstance(v.getContext());
                         SQLiteDatabase db = dbh.getWritableDatabase();
                         String query = "UPDATE goods \n"+
                                 "SET name='"+name+"',\n"+
@@ -174,7 +174,7 @@ public class goods extends Fragment implements View.OnClickListener {
                     String name = ((TextView) dialog.findViewById(R.id.dialog_goods_insert_name)).getText().toString();
                     String artname = ((TextView) dialog.findViewById(R.id.dialog_goods_insert_articul)).getText().toString();
                     if (!name.equals("")) {
-                        DBhelper dbh = new DBhelper(v.getContext());
+                        DBhelper dbh = DBhelper.getInstance(v.getContext());
                         SQLiteDatabase db = dbh.getWritableDatabase();
                         String query = "INSERT INTO goods (name,artname) VALUES ('" + name + "','" + artname + "')";
                         db.execSQL(query);

@@ -7,30 +7,23 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.catchersoft.bucketmgr.MainActivity;
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,10 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import static android.R.attr.bitmap;
-import static android.content.ContentValues.TAG;
-
-    /**
+/**
      * A simple {@link Fragment} subclass.
      */
     public class reportgoods extends Fragment {
@@ -70,7 +60,7 @@ import static android.content.ContentValues.TAG;
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         HashMap<String, String> map;
 
-        DBhelper dbh  = new DBhelper(this.getContext());
+        DBhelper dbh  = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from select_total_report "+Statement+ " order by supplier",new String[]{});
         cursor.moveToFirst();
@@ -179,7 +169,7 @@ import static android.content.ContentValues.TAG;
                                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                                 ft.replace(R.id.content_frame, fragment);
                                 String item = "";
-                                DBhelper dbh  = new DBhelper(view.getContext());
+                                DBhelper dbh  = DBhelper.getInstance(view.getContext());
                                 SQLiteDatabase db = dbh.getReadableDatabase();
                                 Cursor cursor = db.rawQuery("select artname from goods where name='"+itemname+"'",new String[]{});
                                 cursor.moveToFirst();

@@ -1,17 +1,38 @@
-package com.catchersoft.bucketmgr.tools;
+package com.catchersoft.bucketmgr.tools.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.catchersoft.bucketmgr.tools.DB.DBConstants;
 
 /**
  * Created by Клим on 09.09.2017.
  */
 
 public class DBhelper extends SQLiteOpenHelper {
-    Context context;
+    private  static Context context;
+    private static DBhelper self;
 
-    public DBhelper(Context context) {
+    /**
+     * заменяет конструктор
+     * @param context - параметр оставленый для совместимости.(впадло переписывать во всем коде)
+     * @return возвращает объект.
+     */
+    public static DBhelper getInstance(Context context){// аля - конструктор
+        if (self == null){
+            self = new DBhelper(context);
+
+        }
+        return self;
+    }
+
+
+
+    public void Close(){
+
+    }
+    private DBhelper(Context context) {
         // конструктор суперкласса
         super(context, DBConstants.DATABASE_DBNAME, null, DBConstants.DATABASE_VERSION);
         this.context=context;

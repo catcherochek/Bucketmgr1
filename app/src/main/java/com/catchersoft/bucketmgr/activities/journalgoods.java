@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -31,17 +29,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 import java.io.File;
-import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -122,7 +117,7 @@ public class journalgoods extends Fragment implements OnClickListener {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         HashMap<String, String> map;
 
-        DBhelper dbh  = new DBhelper(this.getContext());
+        DBhelper dbh  = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getWritableDatabase();
         //Date today = new Date();
         //today.setHours(0);
@@ -226,7 +221,7 @@ public class journalgoods extends Fragment implements OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Dialog dialog = new Dialog(view.getContext());
                 dialog.setTitle("фотка");
-                DBhelper dbh = new DBhelper(view.getContext());
+                DBhelper dbh = DBhelper.getInstance(view.getContext());
                 SQLiteDatabase db  = dbh.getReadableDatabase();
                 String ID =  ((TextView)((LinearLayout)view).findViewById(R.id.fragment_journalgoods_dataview_id)).getText().toString();
                 String query  = "select photo from \"transaction\" where id = "+ID;
@@ -258,7 +253,7 @@ public class journalgoods extends Fragment implements OnClickListener {
     }
     public void FillSpinners(Spinner spinner,String query,String title) {
         // адаптер
-        DBhelper dbh = new DBhelper(this.getContext());
+        DBhelper dbh = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getReadableDatabase();
         Cursor cursor = db.rawQuery(query,new String[]{});
         cursor.moveToFirst();
@@ -392,7 +387,7 @@ public class journalgoods extends Fragment implements OnClickListener {
                     String Out = ((TextView)dialog.findViewById(R.id.dialog_journalgoods_addbtn_textOut)).getText().toString();
                     if(!art.equals("") | !supp.equals("")){
 
-                        DBhelper dbh = new DBhelper(v.getContext());
+                        DBhelper dbh = DBhelper.getInstance(v.getContext());
                         SQLiteDatabase db = dbh.getWritableDatabase();
                         String f1="";
                         String f2 = "";

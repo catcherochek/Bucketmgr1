@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBConstants;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBConstants;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 
 public class costumerclass extends Fragment implements View.OnClickListener {
@@ -55,7 +55,7 @@ public class costumerclass extends Fragment implements View.OnClickListener {
             Button button = (Button)view.findViewById(R.id.costumer_btn1);
 
             button.setOnClickListener(this);
-            DBhelper dbh = new DBhelper(this.getContext());
+            DBhelper dbh = DBhelper.getInstance(this.getContext());
             SQLiteDatabase db = dbh.getWritableDatabase();
             Cursor cursor = db.rawQuery("select * from suppliers",new String[]{});
             cursor.moveToFirst();
@@ -108,7 +108,7 @@ public class costumerclass extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 String text = ((TextView)dialog.findViewById(R.id.dialog_costumer_insert_name)).getText().toString();
                 if(!text.equals("")){
-                    DBhelper dbh = new DBhelper(v.getContext());
+                    DBhelper dbh = DBhelper.getInstance(v.getContext());
                     SQLiteDatabase db = dbh.getWritableDatabase();
                     String query = "INSERT INTO suppliers (name) VALUES ('"+text+"')";
                     db.execSQL(query);

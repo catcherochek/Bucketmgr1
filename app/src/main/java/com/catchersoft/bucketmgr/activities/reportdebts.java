@@ -19,9 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -66,7 +65,7 @@ public class reportdebts extends Fragment  {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         HashMap<String, String> map;
 
-        DBhelper dbh  = new DBhelper(this.getContext());
+        DBhelper dbh  = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from select_debitors_report "+Statement+ " order by name",new String[]{});
         cursor.moveToFirst();
@@ -107,7 +106,7 @@ public class reportdebts extends Fragment  {
                         final String name = ((TextView)view.findViewById(R.id.fragment_reportdebts_dataview_suppliername)).getText().toString();
                         final String goodss = ((TextView)view.findViewById(R.id.fragment_reportdebts_dataview_goodsarticul)).getText().toString();
                         final String countt = ((TextView)view.findViewById(R.id.fragment_reportdebts_dataview_goodscount)).getText().toString();
-                        DBhelper dbh  = new DBhelper(view.getContext());
+                        DBhelper dbh  = DBhelper.getInstance(view.getContext());
                         SQLiteDatabase db = dbh.getWritableDatabase();
                         //Cursor cur = db.rawQuery("select * from select_debitors_report "+Statement+ " order by name",new String[]{});
                         Fragment fragment = new journaldebts();

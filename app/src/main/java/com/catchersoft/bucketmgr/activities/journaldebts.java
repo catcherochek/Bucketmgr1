@@ -2,35 +2,26 @@ package com.catchersoft.bucketmgr.activities;
 
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
-import com.catchersoft.bucketmgr.tools.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
-import java.io.File;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -110,7 +101,7 @@ public class journaldebts extends Fragment implements View.OnClickListener {
     }
     public void FillSpinners(Spinner spinner, String query, String title) {
         // адаптер
-        DBhelper dbh = new DBhelper(this.getContext());
+        DBhelper dbh = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, new String[]{});
         cursor.moveToFirst();
@@ -196,7 +187,7 @@ public class journaldebts extends Fragment implements View.OnClickListener {
 
                     if(!art.equals("") | !supp.equals("")){
 
-                        DBhelper dbh = new DBhelper(v.getContext());
+                        DBhelper dbh = DBhelper.getInstance(v.getContext());
                         SQLiteDatabase db = dbh.getWritableDatabase();
                         String f1="";
                         String f2 = "";
@@ -239,7 +230,7 @@ public class journaldebts extends Fragment implements View.OnClickListener {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         HashMap<String, String> map;
 
-        DBhelper dbh  = new DBhelper(this.getContext());
+        DBhelper dbh  = DBhelper.getInstance(this.getContext());
         SQLiteDatabase db = dbh.getWritableDatabase();
 
 

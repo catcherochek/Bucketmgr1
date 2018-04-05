@@ -1,4 +1,4 @@
-package com.catchersoft.bucketmgr.tools;
+package com.catchersoft.bucketmgr.tools.DB;
 
 /**
  * Created by Клим on 09.09.2017.
