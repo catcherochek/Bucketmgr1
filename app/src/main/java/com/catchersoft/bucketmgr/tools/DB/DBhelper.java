@@ -8,6 +8,8 @@ import com.catchersoft.bucketmgr.tools.DB.DBConstants;
 
 /**
  * Created by Клим on 09.09.2017.
+ * класс для обслуживания БД - тип Singleton
+ * создается через getInstance
  */
 
 public class DBhelper extends SQLiteOpenHelper {

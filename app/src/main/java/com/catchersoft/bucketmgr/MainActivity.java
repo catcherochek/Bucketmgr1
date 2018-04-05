@@ -29,6 +29,7 @@ import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 import com.catchersoft.bucketmgr.tools.DataBckupHelper;
 import com.catchersoft.bucketmgr.tools.OCRHelper;
 import com.catchersoft.bucketmgr.tools.ReportsaveHelper;
+import com.catchersoft.bucketmgr.tools.debug.DebugFragment;
 
 import java.io.IOException;
 
@@ -75,8 +76,13 @@ public class MainActivity extends AppCompatActivity
       //      startActivityForResult(takePictureIntent, 1);
       //  }
 
+        // TODO: Это место для автоматического установки фрейма отладки
+        Fragment fragment = null;
 
-
+        fragment = new DebugFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame, fragment);
+        ft.commit();
 
 
 
