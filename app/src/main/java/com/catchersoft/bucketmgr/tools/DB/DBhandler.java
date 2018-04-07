@@ -8,11 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by Клим on 07.04.2018.
  */
 
-class DBHandler {
+public class DBHandler {
     private static DBHandler ourInstance;
     private static DBhelper dbh;
     private static Context context;
-    static DBHandler getInstance(Context  contex) {
+    public static DBHandler getInstance(Context  contex) {
         if (ourInstance == null)
         {
             ourInstance= new DBHandler();

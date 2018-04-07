@@ -170,4 +170,15 @@ public class DBConstants {
     public static int LAYOUT_ID_GOODS_OFFSET_FOR_NAME = 100000;
     public static int LAYOUT_ID_GOODS_OFFSET_FOR_ARTICUL = 200000;
     public static int LAYOUT_ID_DEBITORS=3000000;
+
+
+    //функции для работы с бд
+
+    public static String QUERY_GET_DATA_FROM_SUPPLIES(){
+        return "select * from suppliers";
+    };
+
+
+
+
 }
