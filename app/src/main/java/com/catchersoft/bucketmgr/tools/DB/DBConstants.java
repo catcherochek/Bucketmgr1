@@ -174,7 +174,7 @@ public class DBConstants {
 
     //функции для работы с бд
 
-    public static String QUERY_GET_DATA_FROM_SUPPLIES(){
+    public static String QUERY_GET_SELECT_DATA_FROM_SUPPLIES(){
         return "select * from suppliers";
     };
 

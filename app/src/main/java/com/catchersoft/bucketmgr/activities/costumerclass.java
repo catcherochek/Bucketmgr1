@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.catchersoft.bucketmgr.R;
 import com.catchersoft.bucketmgr.tools.DB.DBConstants;
 import com.catchersoft.bucketmgr.tools.DB.DBhelper;
+import com.catchersoft.bucketmgr.tools.DB.DBHandler;
 
 
 public class costumerclass extends Fragment implements View.OnClickListener {
@@ -55,9 +56,9 @@ public class costumerclass extends Fragment implements View.OnClickListener {
             Button button = (Button)view.findViewById(R.id.costumer_btn1);
 
             button.setOnClickListener(this);
-            DBhelper dbh = DBhelper.getInstance(this.getContext());
-            SQLiteDatabase db = dbh.getWritableDatabase();
-            Cursor cursor = db.rawQuery("select * from suppliers",new String[]{});
+
+
+            Cursor cursor =  DBHandler.getInstance(this.getContext()).InitRead(DBConstants.QUERY_GET_SELECT_DATA_FROM_SUPPLIES());
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 String name= cursor.getString(cursor.getColumnIndex("name"));
@@ -84,7 +85,8 @@ public class costumerclass extends Fragment implements View.OnClickListener {
                 ln.addView(tv);
                 cursor.moveToNext();
             }
-            db.close();
+            DBHandler.getInstance().close();
+
 
         }
 
