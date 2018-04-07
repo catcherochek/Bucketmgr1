@@ -74,7 +74,7 @@ public class DBHandler {
      */
     public Cursor InitRead(String query){
         if ((ourInstance != null) & (dbh != null)) {
-            SQLiteDatabase sd = dbh.getWritableDatabase();
+            SQLiteDatabase sd = dbh.getReadableDatabase();
             if (tempsd != null)
                 tempsd.close();
             tempsd = sd;

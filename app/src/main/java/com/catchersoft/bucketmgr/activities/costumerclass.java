@@ -110,10 +110,8 @@ public class costumerclass extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 String text = ((TextView)dialog.findViewById(R.id.dialog_costumer_insert_name)).getText().toString();
                 if(!text.equals("")){
-                    DBhelper dbh = DBhelper.getInstance(v.getContext());
-                    SQLiteDatabase db = dbh.getWritableDatabase();
-                    String query = "INSERT INTO suppliers (name) VALUES ('"+text+"')";
-                    db.execSQL(query);
+                    DBHandler.getInstance().InitWrite(DBConstants.QUERY_INSERT_SUPPLIER_NAME(text));
+                    DBHandler.getInstance().close();
                     Toast.makeText(v.getContext()," Поставщик добавлен успешно", Toast.LENGTH_LONG).show();
                     dialog.hide();
                 }

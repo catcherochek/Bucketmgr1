@@ -176,7 +176,11 @@ public class DBConstants {
 
     public static String QUERY_GET_SELECT_DATA_FROM_SUPPLIES(){
         return "select * from suppliers";
-    };
+    }
+
+    public static String QUERY_INSERT_SUPPLIER_NAME(String text){
+        return "INSERT INTO suppliers (name) VALUES ('"+text+"')";
+    }
 
 
 
