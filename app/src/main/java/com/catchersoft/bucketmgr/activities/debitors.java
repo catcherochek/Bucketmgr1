@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.catchersoft.bucketmgr.R;
 import com.catchersoft.bucketmgr.tools.DB.DBConstants;
+import com.catchersoft.bucketmgr.tools.DB.DBHandler;
 import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 
 /**
@@ -41,9 +42,10 @@ public class debitors extends Fragment implements View.OnClickListener {
         Button button = (Button)view.findViewById(R.id.debitors_btn1);
 
         button.setOnClickListener(this);
-        DBhelper dbh = DBhelper.getInstance(this.getContext());
-        SQLiteDatabase db = dbh.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from debitors",new String[]{});
+        DBHandler db = DBHandler.getInstance(this.getContext());
+
+
+        Cursor cursor = db.InitRead(DBConstants.QUERY_GET_SELECT_DATA_FROM_DEBITORS());
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             String name= cursor.getString(cursor.getColumnIndex("name"));
@@ -116,15 +118,13 @@ public class debitors extends Fragment implements View.OnClickListener {
                 String name = ((TextView)dialog.findViewById(R.id.dialog_debitors_insert_name)).getText().toString();
                 String artname = ((TextView)dialog.findViewById(R.id.dialog_debitors_insert_description)).getText().toString();
                 if(!name.equals("")){
-                    DBhelper dbh = DBhelper.getInstance(v.getContext());
-                    SQLiteDatabase db = dbh.getWritableDatabase();
-                    String query = "INSERT INTO debitors (name,description) VALUES ('"+name+"','"+artname+"')";
-                    db.execSQL(query);
-                    Toast.makeText(v.getContext(),"товар добавлен успешно", Toast.LENGTH_LONG).show();
+                    DBHandler.getInstance().InitWrite(DBConstants.QUERY_INSERT_DEBITORS_DATA(name, artname));
+                    Toast.makeText(v.getContext(),"должник добавлен успешно", Toast.LENGTH_LONG).show();
                     dialog.hide();
+                    DBHandler.getInstance().close();
                 }
                 else {
-                    Toast.makeText(v.getContext()," Не введено имя товара", Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext()," Не введено имя должника", Toast.LENGTH_LONG).show();
                 }
 
 

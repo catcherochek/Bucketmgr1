@@ -25,6 +25,7 @@ import com.catchersoft.bucketmgr.activities.journalgoods;
 import com.catchersoft.bucketmgr.activities.reportdebts;
 import com.catchersoft.bucketmgr.activities.reportgoods;
 
+import com.catchersoft.bucketmgr.tools.DB.DBHandler;
 import com.catchersoft.bucketmgr.tools.DB.DBhelper;
 import com.catchersoft.bucketmgr.tools.DataBckupHelper;
 import com.catchersoft.bucketmgr.tools.OCRHelper;
@@ -42,9 +43,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //DatabaseManager db = DatabaseManager.GetManager(this);
-        DBhelper db = DBhelper.getInstance(this);
-        SQLiteDatabase d = db.getReadableDatabase();
-        db.close();
+        DBHandler.getInstance(this);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

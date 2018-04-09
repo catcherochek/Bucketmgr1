@@ -174,13 +174,20 @@ public class DBConstants {
 
     //функции для работы с бд
 
-    public static String QUERY_GET_SELECT_DATA_FROM_SUPPLIES(){
+    public final static String QUERY_GET_SELECT_DATA_FROM_SUPPLIES(){
         return "select * from suppliers";
     }
+    public final static String QUERY_GET_SELECT_DATA_FROM_DEBITORS(){
+        return "select * from debitors";
+    }
+    public final static String QUERY_INSERT_DEBITORS_DATA(String name, String artname){
+        return "INSERT INTO debitors (name,description) VALUES ('"+name+"','"+artname+"')";
+    }
 
-    public static String QUERY_INSERT_SUPPLIER_NAME(String text){
+    public final static String QUERY_INSERT_SUPPLIER_NAME(String text){
         return "INSERT INTO suppliers (name) VALUES ('"+text+"')";
     }
+
 
 
 
