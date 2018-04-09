@@ -42,7 +42,7 @@ public class debitors extends Fragment implements View.OnClickListener {
         Button button = (Button)view.findViewById(R.id.debitors_btn1);
 
         button.setOnClickListener(this);
-        DBHandler db = DBHandler.getInstance(this.getContext());
+        DBHandler db = DBHandler.getInstance();
 
 
         Cursor cursor = db.InitRead(DBConstants.QUERY_GET_SELECT_DATA_FROM_DEBITORS());
